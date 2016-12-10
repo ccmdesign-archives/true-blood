@@ -8,21 +8,18 @@
     <title>{{page.title}}</title>
     
     <link rel="stylesheet" href="vendor/foundation.min.css">
-    <link rel="stylesheet" href="vendor/styleguide-v2.css">
     <link rel="stylesheet" href="vendor/slick.css"/>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://use.typekit.net/mvc3cdb.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+
     {% include top-bar.html %}
+    {% include advanced-controls.html %}
 
     {{content}}
-
-    {% include footer.html %}
-    {% include copyright.html %}
 
     <div id="overlay" class="js-overlay"></div>
     <script src="vendor/jquery-2.1.4.min.js"></script>
