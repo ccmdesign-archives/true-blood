@@ -1,0 +1,77 @@
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: rgba(black, .1);
+    cursor: pointer;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.4rem;
+
+    @extend .u-transition;
+
+    &:hover {
+        text-decoration: none;
+        @extend .u-transition;
+        background-color: rgba(black, .2);
+    }
+
+    i {
+        margin-left: 15px;
+        vertical-align: middle;
+        float: right;
+    }
+}
+
+.button--icon-only i {
+    margin-left: 0;
+    float: none;
+}
+
+.button--orange,
+.button--blue,
+.button--green,
+.button--black {
+    color: white;
+    &:hover { color: white; }
+}
+
+.button--orange {
+    background-color: $orange;
+    &:hover { background-color: darken($orange, 4); }
+}
+
+.button--green {
+    background-color: $green;
+    &:hover { background-color: darken($green, 4); }
+}
+
+.button--blue {
+    background-color: $blue;
+    &:hover { background-color: darken($blue, 4); }
+}
+
+.button--black {
+    background-color: rgba(black, .8);
+    &:hover { background-color: rgba(black, .9); }
+}
+
+.button--disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button--large { font-size: 2.3rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+

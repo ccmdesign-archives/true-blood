@@ -1,0 +1,22 @@
+// breakpoints
+$small-only: screen and (max-width: 39.9375em);
+$touch: screen and (max-width: 64em);
+$medium: screen and (min-width: 40em);
+$medium-only: screen and (min-width: 40em) and (max-width: 63.9375em);
+$large: screen and (min-width: 64em);
+
+
+// base colors
+$red: #D1313D;
+$light-red: #E5625C;
+$orange: #F9BF76;
+$blue: #8EB2C5;
+$purple: #615375;
+$green: #88C425;
+$yellow: #ECBE13;
+
+$abo-blue: #5255FF;
+
+// Relative Colors
+$main-color: $red;
+$text-color: rgba(black, .8);
