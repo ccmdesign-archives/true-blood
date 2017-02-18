@@ -1,0 +1,28 @@
+---
+layout: default
+title: Lista Generica
+---
+
+<main role="main" class="main-panel flebotomia spaced-top">
+<div class="row expanded collapse align-center">
+  <div class="large-10 column">
+    <table class="table table--clickable-rows">
+      <thead>
+        <th class="table__number">#</th>
+        <th class="table__name">Nome</th>
+        <th class="table__birth">Nascimento</th>
+      </thead>
+      <tbody class="list">
+        {% for i in site.data.doadores %}
+        <tr>
+          <td class="table__number id"><a class="clickable-row" href="#">{{i.id}}</a></td>
+          <td class="table__name name"><a class="clickable-row" href="#">{{i.name}}</a></td>
+          <td class="table__birth birth"><a class="clickable-row" href="#">{{i.birth}}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</main>
+
