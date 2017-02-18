@@ -1,4 +1,4 @@
-.button {
+.u-button {
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -21,6 +21,10 @@
         vertical-align: middle;
         float: right;
     }
+}
+
+.button {
+  @extend .u-button;
 }
 
 .button--icon-only i {

@@ -20,6 +20,20 @@ $(document).ready(function () {
         return true;
     });
 
+        var options = {
+      valueNames: [ 'name', 'id', 'birth' ]
+    };
+
+    var doadoresList = new List('lista-doadores', options);
+
+    $('.toggle-panel__open').click(function(){
+      $('.toggle-panel').addClass('js-active');
+    });
+
+    $('.toggle-panel__close').click(function(){
+      $('.toggle-panel').removeClass('js-active');
+    });
+
     // Modal Click Behavior
     $('.js-open-modal').click(function () {
         $('.js-target-modal').addClass('js-active');

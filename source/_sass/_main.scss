@@ -3,6 +3,49 @@ body {
   font-size: 1rem;
 }
 
+.toggle-panel {
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 40px;
+  @extend .u-transition;
+
+  &.js-active {
+    max-height: 2000px;
+    @extend .u-transition;
+  }
+}
+
+.picture {
+  padding: 0 10px 30px;
+  margin: 0 auto;
+
+  > input[type='file'] {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 8px rgba(black, .2);
+  }
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+  border-bottom: 1px solid $red;
+  color: $red;
+}
+
 .main-panel {
 }
 
@@ -14,51 +57,25 @@ body {
   text-align: center;
 }
 
-.circle-button {
-  border-radius: 50%;
-  background-color: rgba(black, .2);
-  margin: 0;
-  line-height: 1;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  @extend .u-material-icons;
-  
-  &:hover {
+.table--clickable-rows {
+  td {
+    padding: 0;
+  }
+
+  .clickable-row { 
+    display: block; 
+    padding: 15px;
     text-decoration: none;
-    color: white;
-  }
-  
-  &--big {
-    font-size: 4rem;
-    width: 100px;
-    height: 100px;
-    margin: 20px;
   }
 
-  &--small {
-    font-size: 1.4rem;
-    background-color: $yellow;
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-
-    &:hover { background-color: darken($yellow, 8); }
-  }
-
-  &--green { background-color: $green; }
-  &--red { background-color: $red; }
-  &--yellow { background-color: $yellow; }
-
-  &--green:hover { background-color: darken($green, 7); }
-  &--red:hover { background-color: darken($red, 7); }
-  &--yellow:hover { background-color: darken($yellow, 7); }
+  tr:hover .clickable-row { background-color: rgba($yellow, .1);}
 }
+
 
 .scan-barcode {
   background-color: $red;
   height: calc(100vh - 50px);
-  padding-top: 20vh;
+  padding-top: 10vh;
 
   &__instruction {
     color: white;
@@ -70,7 +87,7 @@ body {
 
 .barcode {
   opacity: .2;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .confirm-screen {
@@ -89,5 +106,83 @@ body {
   &__item {
     display: block;
     margin-bottom: 15px;
+  }
+}
+
+.unique-number {
+  color: rgba(black, .7);
+  margin-top: 0;
+  font-size: 4rem;
+}
+
+.illustrated-list {
+  padding: 0;
+
+  &__item {
+    list-style-type: none;
+    padding: 13px 10px 8px;
+    border-bottom: 1px solid rgba(black, .1);
+  }
+}
+
+.coleta-type {
+  text-align: center;
+  
+  img { max-width: 120px; }
+}
+
+.coleta {
+  &__item {
+    &:before {
+      @extend .u-material-icons;
+      content: 'check';
+      float: right;
+      padding: 5px;
+      background-color: transparent;
+      border: 1px solid rgba(black, .2);
+      border-radius: 50%;
+      color: rgba(black, .2);
+    }
+  }
+
+  &__item--ok {
+    &:before {
+      content: 'check';
+      color: white;
+      background-color: $green;
+    }
+  }
+
+  &__item--error {
+    border: 1px solid $red;
+    
+    &:before {
+      content: 'close';
+      color: white;
+      background-color: $red;
+    }
+  }
+
+  &__item--warning {
+    &:before {
+      content: 'error_outline';
+      color: white;
+      background-color: $yellow;
+    }
+  }
+
+  &__item-number {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(black, .7);
+  }
+
+  &__item-icon {
+    max-height: 40px;
+    margin-right: 20px;
+  }
+
+  &__item-status {
+
   }
 }

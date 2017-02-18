@@ -5,47 +5,163 @@ subtitle:
 ---
 
 <main role="main" class="main-panel">
-<form action="" class="form spaced-top">
+<form action="" class="form spaced-top" id="lista-doadores">
   <div class="row expanded align-center">
     <div class="column large-10">
-      <input type="text" placeholder="Nome do Doador" class="large-input" autofocus>
+      <div class="composite-input">
+        <input type="text" placeholder="Nome do Doador" class="large-input composite-input__field search " autofocus>
+        <span class="composite-input__button large-input--button large-input--yellow toggle-panel__open"><i class="material-icons">add</i></span>  
+      </div>
     </div>
+  </div>
+  <div class="toggle-panel">
+    <div id="novo-doador" class="row expanded align-center">
+      <div class="large-3 column">
+        <div class="row">
+          <div class="large-10 column picture">
+            <div class="picture__image" style="background-image: url('images/bg-image-sample.png');"></div>
+            <input type="file">    
+          </div>
+          <div class="large-12 column abo abo--a-neg">
+            <div class="abo__item"></div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="large-7 column">
+        <div class="row expanded">
+          <div class="large-12 column">
+            <input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" name="date" value="" placeholder="Data de Nascimento (DD/MM/AAAA)" />
+            <div class="row">
+              <div class="large-4 column">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Sexo</option>
+                    <option value="">Feminino</option>
+                    <option value="">Masculino</option>
+                  </select>
+                </div>
+              </div>
+              <div class="large-4 column">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Cor</option>
+                    <option value="">Preto</option>
+                    <option value="">Branco</option>
+                    <option value="">Azul</option>
+                    <option value="">Verde</option>
+                  </select>
+                </div>
+              </div>
+              <div class="large-4 column">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Estado Civil</option>
+                    <option value="">Casado</option>
+                    <option value="">Solteiro</option>
+                    <option value="">Vida Loca</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column large-6">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Formação</option>
+                    <option value="">Pós Graduação</option>
+                    <option value="">Superior Completo</option>
+                  </select>
+                </div>    
+              </div>
+              <div class="column large-6">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Profissão</option>
+                    <option value="">Pós Graduação</option>
+                    <option value="">Superior Completo</option>
+                  </select>
+                </div>    
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="large-12 column">
+            <h4>Endereço</h4>
+          </div>
+          <div class="large-12 column">
+            <div class="row">
+              <div class="large-6 column">
+                <input type="tel" placeholder="Telefone">
+              </div>
+              <div class="large-6 column">
+                <input type="tel" placeholder="Celular">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-8 column">
+                <input type="text" placeholder="Rua">
+              </div>
+              <div class="large-4 column">
+                <input type="number" placeholder="Nº">
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-8 column">
+                <input type="text" placeholder="Cidade">
+              </div>
+              <div class="large-4 column">
+                <div class="select">
+                  <select name="" id="">
+                    <option value="">Estado</option>
+                    <option value="">MG</option>
+                    <option value="">AC</option>
+                    <option value="">AM</option>
+                  </select>
+                </div>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="large-12 column">
+          <section class="controls">
+            <div class="circle-button circle-button--big circle-button--red toggle-panel__close">close</div>
+            <div class="circle-button circle-button--big circle-button--green toggle-panel__close">check</div>
+          </section>
+        </div>
+    </div>
+  </div>
   </div>
   <div class="row expanded align-center">
     <div class="column large-10">
-      <table class="table">
+      <table class="table table--clickable-rows">
         <thead>
           <th class="table__number">#</th>
           <th class="table__name">Nome</th>
           <th class="table__birth">Nascimento</th>
         </thead>
-        <tbody>
+        <tbody class="list">
+          {% for i in site.data.doadores %}
           <tr>
-            <td class="table__number">20160421</td>
-            <td class="table__name">Claudio Carvalho Carneiro de Mendonca</td>
-            <td class="table__birth">22/06/1982</td>
+            <td class="table__number id"><a class="clickable-row" href="#">{{i.id}}</a></td>
+            <td class="table__name name"><a class="clickable-row" href="#">{{i.name}}</a></td>
+            <td class="table__birth birth"><a class="clickable-row" href="#">{{i.birth}}</a></td>
           </tr>
-          <tr>
-            <td class="table__number">20160228</td>
-            <td class="table__name">Patricia Carvalho Carneiro de Mendonca</td>
-            <td class="table__birth">27/11/1954</td>
-          </tr>
-          <tr>
-            <td class="table__number">20160717</td>
-            <td class="table__name">Juliana Pinto de Moura Andrade</td>
-            <td class="table__birth">31/01/1982</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
 
-    <div class="large-12 column">
+    <!-- <div class="large-12 column">
       <section class="controls">
         <button class="circle-button circle-button--big circle-button--red">close</button>
         <button class="circle-button circle-button--big circle-button--green">check</button>
         <button class="circle-button circle-button--big circle-button--yellow">add</button>
       </section>
-    </div>
+    </div> -->
   </div>
 </form>
 </main>

@@ -1,0 +1,91 @@
+.composite-input {
+  display: flex;
+  
+  &__field { 
+    flex: 1; 
+    margin-bottom: 0 !important; 
+  }
+  &__button { 
+    flex: 0; 
+    border-left: 0 !important;
+  }
+}
+
+.large-input {
+  font-size: 3rem;
+  font-weight: 100;
+
+  &:disabled {
+    background-color: transparent;
+    border: 1px solid rgba(black, .1);
+  }
+
+  &--button {
+    padding: 17px 25px;
+    text-align: center;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+
+    > i { font-size: 3.4rem !important; }
+  }
+
+  &.large-input--negative {
+    border: 1px solid rgba(white, .3);
+    background-color: transparent;
+    color: white;
+    @include placeholder {
+      color: white;
+    }
+  }
+
+  &--yellow {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: darken($yellow, 4);
+    }
+  }
+}
+
+.circle-button {
+  border-radius: 50%;
+  background-color: rgba(black, .2);
+  margin: 0;
+  padding: 15px;
+  line-height: 1;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  @extend .u-material-icons;
+  
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+  
+  &--big {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+  }
+
+  &--small {
+    font-size: 1.4rem;
+    background-color: $yellow;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+
+    &:hover { background-color: darken($yellow, 8); }
+  }
+
+  &--green { background-color: $green; }
+  &--red { background-color: $red; }
+  &--yellow { background-color: $yellow; }
+
+  &--green:hover { background-color: darken($green, 7); }
+  &--red:hover { background-color: darken($red, 7); }
+  &--yellow:hover { background-color: darken($yellow, 7); }
+}
